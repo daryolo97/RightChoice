@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RightChoice</string>
+    <string name="registrati"><u>Non hai un account? Registrati qui</u></string>
+    <string name="tornaAllogin"><u>Torna alla schermata di Login</u></string>
+    <string name="inserisciCorso"><u>Inserisci corso</u></string>
+    <string name="eliminaCorso"><u>Elimina corso</u></string>
+    <string name="modificaCorso"><u>Modifica corso</u></string>
+
+</resources>

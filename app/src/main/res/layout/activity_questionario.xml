@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".QuestionarioActivity"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/QuestionarioForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#FFA000"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/CorsoForm">
+
+
+
+
+    <TextView
+        android:id="@+id/scrittaQuestionario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUESTIONARIO"
+        android:textColor="#fff"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        />
+
+    <TextView
+        android:id="@+id/domanda1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 1"
+        android:padding="5dp"
+        android:layout_below="@id/scrittaQuestionario"
+        android:textSize="20dp"
+        android:textColor="#fff"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/risposteDomanda1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda1"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+        <RadioButton
+            android:id="@+id/risp1Domanda1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"
+            />
+
+        </RadioGroup>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/domanda2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 2"
+        android:padding="5dp"
+        android:layout_below="@id/risposteDomanda1"
+        android:textSize="20dp"
+        android:textColor="#fff"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/risposteDomanda2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda2"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/risp1Domanda2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"
+
+            />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/domanda3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 3"
+        android:padding="5dp"
+        android:layout_below="@id/risposteDomanda2"
+        android:textSize="20dp"
+        android:textColor="#fff"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda3"
+        android:id="@+id/risposteDomanda3"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/risp1Domanda3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:layout_marginLeft="100dp"
+            android:textColor="#fff"
+            />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/domanda4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 4"
+        android:padding="5dp"
+        android:layout_below="@id/risposteDomanda3"
+        android:textSize="20dp"
+        android:textColor="#fff"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda4"
+        android:id="@+id/risposteDomanda4"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/risp1Domanda4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"
+            />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/domanda5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 5"
+        android:padding="5dp"
+        android:layout_below="@id/risposteDomanda4"
+        android:textSize="20dp"
+        android:textColor="#fff"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda5"
+        android:id="@+id/risposteDomanda5"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/risp1Domanda5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"
+            />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/domanda6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 6"
+        android:padding="5dp"
+        android:layout_below="@id/risposteDomanda5"
+        android:textSize="20dp"
+        android:textColor="#fff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda6"
+        android:id="@+id/risposteDomanda6"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/risp1Domanda6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"
+            />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/domanda7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domanada 7"
+        android:padding="5dp"
+        android:layout_below="@id/risposteDomanda6"
+        android:textSize="20dp"
+        android:textColor="#fff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/domanda7"
+        android:id="@+id/risposteDomanda7"
+        >
+        <RadioGroup
+            android:id="@+id/radioGroup7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
+            android:id="@+id/risp1Domanda7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta1"
+            android:textColor="#fff"
+            android:layout_weight="1"
+
+            />
+
+        <RadioButton
+            android:id="@+id/risp2Domanda7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="risposta2"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:layout_marginLeft="100dp"
+            />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/QuestionarioForm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        >
+    <android.support.v7.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#FFA000"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:id="@+id/ottieniRisultato"
+        android:layout_gravity="center"
+        android:onClick="ottieniRisultatoPremuto"
+        android:layout_below="@+id/QuestionarioForm"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Ottieni risultato"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+</RelativeLayout>

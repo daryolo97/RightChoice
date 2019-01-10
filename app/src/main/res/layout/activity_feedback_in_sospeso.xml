@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".FeedbackInSospesoActivity">
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/feedbackForm"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#FFA000"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/feedbackForm">
+
+            <TextView
+                android:id="@+id/nomeCorsoFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#11000000"
+                android:ems="10"
+                android:text="NOMECORSO"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/nomeCorsoFeedback"
+                android:background="#11000000"
+                android:ems="10"
+                android:text="TITOLO"
+                android:id="@+id/titoloFeedbackInSospeso"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginBottom="20dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/descrizioneFeedbackInSospeso"
+                android:layout_below="@id/titoloFeedbackInSospeso"
+                android:background="#11000000"
+                android:hint="descrizione Feedback"
+                android:textColor="#fff"
+                android:ems="15"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/convalidaButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/feedbackForm"
+        app:cardBackgroundColor="#FFA000"
+        app:cardCornerRadius="25dp"
+        android:onClick="convalidaButton"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Convalida"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/rifiutaButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/convalidaButton"
+        app:cardBackgroundColor="#FFA000"
+        android:onClick="rifiutaButton"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Rifiuta"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

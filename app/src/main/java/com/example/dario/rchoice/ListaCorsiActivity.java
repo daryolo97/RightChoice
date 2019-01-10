@@ -1,0 +1,61 @@
+package com.example.dario.rchoice;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+
+import java.util.ArrayList;
+
+import gestori.GestioneCorso;
+
+
+public class ListaCorsiActivity extends Activity {
+
+    private GestioneCorso gestioneCorso;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lista_corsi);
+
+        gestioneCorso = new GestioneCorso(getApplicationContext());
+
+        ArrayList<String> listaNomiCorsi = gestioneCorso.getNomeCorsi();
+
+        ArrayAdapter<String> arrayAdapterNome = new ArrayAdapter<String>(this, R.layout.layout_corso, R.id.nomeCorsoListView, listaNomiCorsi);
+
+        ListView listView = findViewById(R.id.listaCorsiListView);
+        listView.setAdapter(arrayAdapterNome);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), CorsoActivity.class);
+                intent.putExtra("posizione", position);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+    }
+
+    public void inserisciCorso(View v ) {
+        Intent intent = new Intent(getApplicationContext(), InserisciCorsoActivityADMIN.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+
+}
