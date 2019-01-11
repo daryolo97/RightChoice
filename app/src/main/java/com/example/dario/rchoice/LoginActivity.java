@@ -2,20 +2,24 @@ package com.example.dario.rchoice;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import database.DatabaseHelper;
+import entità.Studente;
+import facade.GestoreRightChoice;
 import gestori.GestioneFeedback;
 import gestori.GestioneStudente;
 import entità.Admin;
 
 public class LoginActivity extends Activity {
     private EditText usernameET, passwordET;
-    private GestioneStudente gestioneStudente;
-    private GestioneFeedback gestioneFeedback;
-    private Admin admin;
+    private GestoreRightChoice gestoreRightChoice;
+    private DatabaseHelper databaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +27,17 @@ public class LoginActivity extends Activity {
         usernameET = findViewById(R.id.userName);
         passwordET = findViewById(R.id.password);
 
-        gestioneStudente = new GestioneStudente(getApplicationContext());
-        gestioneFeedback = new GestioneFeedback(getApplicationContext());
+        databaseHelper = new DatabaseHelper(getApplicationContext());
 
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
-        admin = new Admin();
+        Admin admin = new Admin("admin", "admin");
+        Studente studente = new Studente(1234, "test", "test", "dario", "dario");
+
+        gestoreRightChoice.inserisciAdmin(admin);
+        gestoreRightChoice.inserisciStudente(studente);
+
+        databaseHelper.closeDB();
     }
 
     public void loginPremuto (View v) {
@@ -36,11 +46,11 @@ public class LoginActivity extends Activity {
 
 
 
-        if(gestioneStudente.verificaEsistenzaStudenti(username, password)) {
+        if(gestoreRightChoice.verificaEsistenzaStudenti(username, password)) {
             setHomeActivity();
             finish();
         }
-        else if (admin.verificaAdmin(username, password)) {
+        else if (gestoreRightChoice.loginAdmin(username, password)) {
             setAdminActivity();
             finish();
         }

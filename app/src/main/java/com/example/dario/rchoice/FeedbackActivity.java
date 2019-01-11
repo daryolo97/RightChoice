@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import gestori.GestioneFeedback;
 import entità.Corso;
@@ -14,7 +15,7 @@ import utility.CustomAdapterFeedback;
 
 public class FeedbackActivity extends Activity {
     private ListView listView;
-    private GestioneFeedback gestioneFeedback;
+    private GestoreRightChoice gestoreRightChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +24,15 @@ public class FeedbackActivity extends Activity {
 
         listView = findViewById(R.id.listaFeedbackListView);
 
-        gestioneFeedback = new GestioneFeedback(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
         //prelevo i dati dall'acritivy precedente
         Bundle extras = getIntent().getExtras();
         int value = extras.getInt("posizione");
 
         GestioneCorso gestioneCorso = new GestioneCorso(getApplicationContext());
-        Corso corsoSelezionato = gestioneCorso.getAllCorsi().get(value);
-        ArrayList<Feedback> listaFeedback = gestioneFeedback.getAllFeedback();
+        Corso corsoSelezionato = gestoreRightChoice.listaCorsi().get(value);
+        ArrayList<Feedback> listaFeedback = gestoreRightChoice.listaFeedback();
         ArrayList<Feedback> listaFeedbackByCorso = new ArrayList<>();
 
         for(int i=0; i<listaFeedback.size(); i++) {

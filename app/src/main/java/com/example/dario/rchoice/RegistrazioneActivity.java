@@ -6,12 +6,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneStudente;
 import entità.Studente;
 
 public class RegistrazioneActivity extends Activity {
     private EditText usernameET, passwordET, confermaPaswordET, matricolaET, nomeET, cognomeET;
-    private GestioneStudente gestioneStudente;
+    private GestoreRightChoice gestoreRightChoice;
     private String username, password, nome, cognome;
     private int matricola;
 
@@ -27,7 +28,7 @@ public class RegistrazioneActivity extends Activity {
         nomeET = findViewById(R.id.nomeRegistrazione);
         cognomeET = findViewById(R.id.cognomeRegistrazione);
 
-        gestioneStudente = new GestioneStudente(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
 
     }
@@ -47,17 +48,17 @@ public class RegistrazioneActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Non è possibile lasciare campi vuoti", Toast.LENGTH_LONG).show();
         }
 
-        else if(gestioneStudente.verificaUsername(studente) == false) {
+        else if(gestoreRightChoice.verificaUsernameStudente(studente) == false || gestoreRightChoice.verificaUsernameAdmin(username) == false) {
             Toast.makeText(getApplicationContext(), "Username esistente", Toast.LENGTH_LONG).show();
         }
 
-        else if(gestioneStudente.verificaMatricola(studente) == false) {
+        else if(gestoreRightChoice.verificaMatricolaStudente(studente) == false) {
             Toast.makeText(getApplicationContext(), "Matricola esistente", Toast.LENGTH_LONG).show();
         }
 
         else {
             Toast.makeText(getApplicationContext(), "Studente aggiunto", Toast.LENGTH_LONG).show();
-            gestioneStudente.inserisciStudente(studente);
+            gestoreRightChoice.inserisciStudente(studente);
         }
 
 

@@ -7,39 +7,22 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import gestori.GestioneFeedback;
 import entità.Corso;
 import entità.Questionario;
 
 public class HomeActivity extends Activity {
-    private GestioneCorso gestioneCorso;
-    private GestioneFeedback gestioneFeedback;
-    private TextView TVdomanda1, TVdomanda2, TVdomanda3, TVdomanda4, TVdomanda5;
-    private RadioButton risp1Domanda1Button;
-    private RadioButton risp2Domanda1Button;
-    private RadioButton risp3Domanda1Button;
-    private RadioButton risp1Domanda2Button;
-    private RadioButton risp2Domanda2Button;
-    private RadioButton risp3Domanda2Button;
-    private RadioButton risp1Domanda3Button;
-    private RadioButton risp2Domanda3Button;
-    private RadioButton risp3Domanda3Button;
-    private RadioButton risp1Domanda4Button;
-    private RadioButton risp2Domanda4Button;
-    private RadioButton risp3Domanda4Button;
-    private RadioButton risp1Domanda5Button;
-    private RadioButton risp2Domanda5Button;
-    private RadioButton risp3Domanda5Button;
+    private GestoreRightChoice gestoreRightChoice;
 
-    private Questionario questionario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
         Corso corso1 = new Corso("CO_01", "Programmazione Avanzata", "Annalisa De Bonis", "Questo corso mira ad impartire allo studente, conoscenza e capacità di applicazione dei principali modelli e strumenti per progettare e implementare programmi complessi", "www.di-srv.unisa.it/professori/debonis/");
         Corso corso2 = new Corso("CO_02", "Mobile Computing", "Roberto De Prisco", "Il corso si prefigge l’obiettivo di fornire allo studente le conoscenze necessarie per poter sviluppare programmi per dispositivi mobili e la capacita' di applicare tale conoscenza: progettazione e sviluppo di programmi per dispositivi mobili, in particolare per smartphone Android.", "http://www.di-srv.unisa.it/~robdep/MP/");
         Corso corso3 = new Corso("CO_03", "Sicurezza", "Alfredo De Santis", "L'obiettivo di questo insegnamento è di introdurre agli studenti i fondamenti della sicurezza informatica, ovvero proteggere i dati da agenti esterni e dalle azioni di utenti non autorizzati", "https://corsi.unisa.it/informatica/didattica/insegnamenti?anno=2018&id=509869");
@@ -54,29 +37,13 @@ public class HomeActivity extends Activity {
                 "•principali metodi di rappresentazione della conoscenza, con particolare riferimento a quelli basati sulla logica del primo ordine e relativi metodi di inferenza. \n" +
                 "•rappresentazione di conoscenza incerta e metodi probabilistici di inferenza, con particolare riferimento alle reti bayesiane.\n" +
                 "•tecniche di machine learning.", "https://corsi.unisa.it/informatica-magistrale/didattica/insegnamenti?anno=2016&id=511676");
-        gestioneCorso.inserisciCorsi(corso1);
-        gestioneCorso.inserisciCorsi(corso2);
-        gestioneCorso.inserisciCorsi(corso3);
-        gestioneCorso.inserisciCorsi(corso4);
-        gestioneCorso.inserisciCorsi(corso5);
-        gestioneCorso.inserisciCorsi(corso6);
-        gestioneCorso.inserisciCorsi(corso7);
-
-/*
-
-        gestioneFeedback = new GestioneFeedback(getApplicationContext());
-        //istanza di feedback di esempio
-        Feedback feedback1 = new Feedback("CO_01", "UUUUUU", "IFOISDJFOISJFIOJSDOIJFISODJFOISDJFIOS DJFPFIFVNDUIFNV DFVNIDFNVI DF", 1);
-        Feedback feedback2 = new Feedback("CO_02", "UUUUUUCZX", "HHHHIFOISDJFOISJFIOJSDOIJFISODJFOISDJFIOS DJFPFIFVNDUIFNV DFVNIDFNVI DF", 1);
-        Feedback feedback3 = new Feedback("CO_03", "UUUUUUSDCS", "IFFFFVVVVVFOISDJFOISJFIOJSDOIJFISODJFOISDJFIOS DJFPFIFVNDUIFNV DFVNIDFNVI DF", 1);
-        Feedback feedback4 = new Feedback("CO_04", "UUUEFUUU", "SSSSIFOISDJSDFOISJFIOJSDOIJFISODJFOISDJFIOS DJFPFIFVNDUIFNV DFVNIDFNVI DF", 1);
-
-
-        long feedback1_id = gestioneFeedback.inserisciFeedback(feedback1);
-        long feedback2_id = gestioneFeedback.inserisciFeedback(feedback2);
-        long feedback3_id = gestioneFeedback.inserisciFeedback(feedback3);
-        long feedback4_id = gestioneFeedback.inserisciFeedback(feedback4);*/
-
+        gestoreRightChoice.inserisciCorso(corso1);
+        gestoreRightChoice.inserisciCorso(corso2);
+        gestoreRightChoice.inserisciCorso(corso3);
+        gestoreRightChoice.inserisciCorso(corso4);
+        gestoreRightChoice.inserisciCorso(corso5);
+        gestoreRightChoice.inserisciCorso(corso6);
+        gestoreRightChoice.inserisciCorso(corso7);
     }
 
     public void listaCorsiPremuta(View v) {

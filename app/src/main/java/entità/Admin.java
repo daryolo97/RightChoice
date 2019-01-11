@@ -4,9 +4,21 @@ public class Admin {
 
     private String username, password;
 
-    public Admin() {
-        this.username = "admin";
-        this.password = "admin";
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public Admin () {
+
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUsername() {
@@ -18,12 +30,6 @@ public class Admin {
         return password;
     }
 
-  public boolean verificaAdmin(String username, String password) {
-        if(this.username.equals(username) && this.password.equals(password))
-            return true;
-
-        return false;
-  }
 
   public void inserisciFeedback(Feedback feedback) {
         feedback.setStato(1);

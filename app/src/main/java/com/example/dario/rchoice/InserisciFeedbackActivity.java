@@ -8,14 +8,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import gestori.GestioneFeedback;
 import entità.Corso;
 import entità.Feedback;
 
 public class InserisciFeedbackActivity extends Activity {
-    private GestioneCorso gestioneCorso;
-    private GestioneFeedback gestioneFeedback;
+    private GestoreRightChoice gestoreRightChoice;
     private ArrayList<Corso> listaCorsi;
     private EditText titoloET, descrizioneET;
     private int value;
@@ -31,11 +31,9 @@ public class InserisciFeedbackActivity extends Activity {
         Bundle extra = getIntent().getExtras();
         value = extra.getInt("posizione");
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
-        gestioneFeedback = new GestioneFeedback(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
-        listaCorsi = gestioneCorso.getAllCorsi();
-
+        listaCorsi = gestoreRightChoice.listaCorsi();
     }
 
     public void CreaFeedback(View v) {
@@ -59,7 +57,7 @@ public class InserisciFeedbackActivity extends Activity {
             feedback.setCodiceCorso(corso.getCodice());
             feedback.setStato(0);
 
-            gestioneFeedback.inserisciFeedback(feedback);
+            gestoreRightChoice.inserisciFeedback(feedback);
 
             Toast.makeText(getApplicationContext(), "Feedback inserito nella lista in sospeso, attendi che la convalidazione dell'admin", Toast.LENGTH_LONG).show();
             finish();

@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 import database.DatabaseHelper;
 import entità.Corso;
-import interfacce.InterfacciaCorso;
+import interfacce.InterfacciaRightChoice;
 
-public class GestioneCorso implements InterfacciaCorso {
+public class GestioneCorso  {
     private SQLiteDatabase database;
     private Context context;
     private DatabaseHelper dbHelper;
@@ -21,8 +21,8 @@ public class GestioneCorso implements InterfacciaCorso {
         dbHelper = new DatabaseHelper(context);
     }
 
-    @Override
-    public void inserisciCorsi(Corso corso) {
+
+    public void inserisciCorso(Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -37,8 +37,8 @@ public class GestioneCorso implements InterfacciaCorso {
 
     }
 
-    @Override
-    public ArrayList<Corso> getAllCorsi() {
+
+    public ArrayList<Corso> listaCorsi() {
         ArrayList<Corso> listaCorsi = new ArrayList<>();
         String query = "SELECT * FROM corsi";
 
@@ -61,7 +61,7 @@ public class GestioneCorso implements InterfacciaCorso {
         return listaCorsi;
     }
 
-    @Override
+
     public ArrayList<String> getNomeCorsi() {
         ArrayList<String> listaNomiCorsi = new ArrayList<>();
         String query = "SELECT nome FROM corsi";
@@ -80,10 +80,10 @@ public class GestioneCorso implements InterfacciaCorso {
         return listaNomiCorsi;
     }
 
-    @Override
+
     public boolean verificaCodiceCorso(Corso corso) {
         database = dbHelper.getReadableDatabase();
-        ArrayList<Corso> listaCorsi = this.getAllCorsi();
+        ArrayList<Corso> listaCorsi = this.listaCorsi();
 
         for(int i=0; i<listaCorsi.size(); i++) {
             if(listaCorsi.get(i).getCodice().equals(corso.getCodice()))
@@ -93,8 +93,8 @@ public class GestioneCorso implements InterfacciaCorso {
         return true;
     }
 
-    @Override
-    public void updateCorso(Corso corso, String nome, String docente, String descrizione, String link) {
+
+    public void modificaCorso(Corso corso, String nome, String docente, String descrizione, String link) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -106,12 +106,13 @@ public class GestioneCorso implements InterfacciaCorso {
         db.update("corsi", contentValues, "codice=?", new String[]{corso.getCodice()});
     }
 
-    @Override
-    public void deleteCorso(Corso corso) {
+
+    public void cancellaCorso(Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         db.delete("corsi",  "codice = ?", new String[]{corso.getCodice()});
     }
+
 
 
 }

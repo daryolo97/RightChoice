@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_STUDENTI = "CREATE TABLE studenti(matricola INTEGER PRIMARY KEY, username TEXT NOT NULL, password TEXT NOT NULL, nome TEXT, cognome TEXT)";
     private static final String CREATE_TABLE_CORSI = "CREATE TABLE corsi(codice TEXT PRIMARY KEY, nome TEXT NOT NULL, docente TEXT NOT NULL, descrizione TEXT, link TEXT)";
     private static final String CREATE_TABLE_FEEDBACK = "CREATE TABLE feedback(id INTEGER PRIMARY KEY AUTOINCREMENT, codiceCorso TEXT NOT NULL, titolo TEXT NOT NULL, descrizione TEXT NOT NULL, stato INTEGER NOT NULL)";
-    private static final String CREATE_TABLE_QUESTIONARIO = "CREATE TABLE questionario(id TEXT PRIMARY KEY, domande TEXT NOT NULL, risposte TEXT NOT NULL, risultati TEXT)";
+    private static final String CREATE_TABLE_ADMIN = "CREATE TABLE admin(username TEXT, password TEXT, PRIMARY KEY (username, password))";
 
 
     public DatabaseHelper(Context context) {
@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_STUDENTI);
         db.execSQL(CREATE_TABLE_CORSI);
         db.execSQL(CREATE_TABLE_FEEDBACK);
-        db.execSQL(CREATE_TABLE_QUESTIONARIO);
+        db.execSQL(CREATE_TABLE_ADMIN);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS studenti");
         db.execSQL("DROP TABLE IF EXISTS corsi");
         db.execSQL("DROP TABLE IF EXISTS feedback");
-        db.execSQL("DROP TABLE IF EXISTS questionario");
+        db.execSQL("DROP TABLE IF EXISTS admin");
 
         onCreate(db);
     }
