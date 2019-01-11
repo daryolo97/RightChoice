@@ -9,14 +9,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import gestori.GestioneFeedback;
 import entità.Corso;
 import entità.Feedback;
 
 public class FeedbackInSospesoActivity extends Activity {
-    private GestioneCorso gestioneCorso;
-    private GestioneFeedback gestioneFeedback;
+    private GestoreRightChoice gestoreRightChoice;
     private TextView nomeCorso, titolo, descrizione;
     private String nome;
     private int value;
@@ -32,13 +32,12 @@ public class FeedbackInSospesoActivity extends Activity {
         value = extra.getInt("posizione");
 
         //inizializzazione degli adapter
-        gestioneCorso = new GestioneCorso(getApplicationContext());
-        gestioneFeedback = new GestioneFeedback(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
         //tramite gli adapter prelevo le liste dei feedback e dei corsi dal database
-        ArrayList<Feedback> listaFeedback = gestioneFeedback.getAllFeedback();
+        ArrayList<Feedback> listaFeedback = gestoreRightChoice.listaFeedback();
         listaFeedbackInSospeso = new ArrayList<>();
-        ArrayList<Corso> listaCorsi = gestioneCorso.getAllCorsi();
+        ArrayList<Corso> listaCorsi = gestoreRightChoice.listaCorsi();
 
 
         //inserisco all'interno di listaFeedbackInSospeso tutti i feedback in sospeso
@@ -67,14 +66,14 @@ public class FeedbackInSospesoActivity extends Activity {
     }
 
     public void convalidaButton(View v) {
-       gestioneFeedback.setStatoFeedback(listaFeedbackInSospeso.get(value));
+       gestoreRightChoice.setStatoFeedback(listaFeedbackInSospeso.get(value));
        startActivity(new Intent(getApplicationContext(), ListaFeedbackInSospesoActivity.class));
        finish();
        Toast.makeText(getApplicationContext(), "Feedback convalidato", Toast.LENGTH_SHORT).show();
     }
 
     public void rifiutaButton(View v) {
-        gestioneFeedback.deleteFeedback(listaFeedbackInSospeso.get(value));
+        gestoreRightChoice.cancellaFeedback(listaFeedbackInSospeso.get(value));
         finish();
         Toast.makeText(getApplicationContext(), "Feedback scartato", Toast.LENGTH_SHORT).show();
 

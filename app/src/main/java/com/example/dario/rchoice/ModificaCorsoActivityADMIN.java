@@ -9,12 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import entità.Corso;
 
 public class ModificaCorsoActivityADMIN extends Activity {
 
-    private GestioneCorso gestioneCorso;
+    private GestoreRightChoice gestoreRightChoice;
     private EditText nomeCorso, docenteCorso, descrizioneCorso, linkCorso;
     private TextView codiceCorso;
     private String nome, docente, descrizione, link;
@@ -26,7 +27,7 @@ public class ModificaCorsoActivityADMIN extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifica_corso_admin);
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
         nomeCorso = findViewById(R.id.modificaNomeCorsoInserito);
         docenteCorso = findViewById(R.id.modificaDocenteCorsoInserito);
@@ -39,7 +40,7 @@ public class ModificaCorsoActivityADMIN extends Activity {
         Bundle extra = getIntent().getExtras();
         int value = extra.getInt("posizione");
 
-        corso = gestioneCorso.getAllCorsi().get(value);
+        corso = gestoreRightChoice.listaCorsi().get(value);
 
         nomeCorso.setText(corso.getNome(), TextView.BufferType.EDITABLE);
         docenteCorso.setText(corso.getDocente(), TextView.BufferType.EDITABLE);
@@ -58,7 +59,7 @@ public class ModificaCorsoActivityADMIN extends Activity {
         descrizione = descrizioneCorso.getText().toString();
         link = linkCorso.getText().toString();
 
-        gestioneCorso.updateCorso(corso, nome, docente, descrizione, link);
+        gestoreRightChoice.modificaCorso(corso, nome, docente, descrizione, link);
 
         Intent intent = new Intent(getApplicationContext(), ListaCorsiActivityADMIN.class);
         startActivity(intent);

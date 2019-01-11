@@ -9,9 +9,8 @@ import java.util.ArrayList;
 
 import database.DatabaseHelper;
 import entità.Studente;
-import interfacce.InterfacciaStudente;
 
-public class GestioneStudente implements InterfacciaStudente {
+public class GestioneStudente {
     private SQLiteDatabase database;
     private Context context;
     private DatabaseHelper dbHelper;
@@ -22,8 +21,8 @@ public class GestioneStudente implements InterfacciaStudente {
     }
 
 
-    @Override
-    public long inserisciStudente(Studente studente) {
+
+    public void inserisciStudente(Studente studente) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -34,13 +33,12 @@ public class GestioneStudente implements InterfacciaStudente {
         values.put("nome", studente.getNome());
         values.put("cognome", studente.getCognome());
 
-        long studente_id = db.insert("studenti", null, values);
+        db.insert("studenti", null, values);
 
-        return studente_id;
     }
 
-    @Override
-    public ArrayList<Studente> getAllStudenti() {
+
+    public ArrayList<Studente> listaStudenti() {
         ArrayList<Studente> listaStudenti = new ArrayList<>();
         String query = "SELECT * FROM studenti";
 
@@ -64,7 +62,7 @@ public class GestioneStudente implements InterfacciaStudente {
     }
 
     public boolean verificaEsistenzaStudenti(String username, String password) {
-        ArrayList<Studente> listaStudenti = this.getAllStudenti();
+        ArrayList<Studente> listaStudenti = this.listaStudenti();
 
         for(int i=0; i<listaStudenti.size(); i++) {
             if (listaStudenti.get(i).getUsername().equals(username) && listaStudenti.get(i).getPassword().equals(password))
@@ -74,8 +72,13 @@ public class GestioneStudente implements InterfacciaStudente {
         return false;
     }
 
-    public boolean verificaUsername(Studente s) {
-        ArrayList<Studente> listaStudenti = this.getAllStudenti();
+    public boolean verificaUsernameStudente(Studente s) {
+
+        if (s == null) {
+            return false;
+        }
+
+        ArrayList<Studente> listaStudenti = this.listaStudenti();
         for(int i=0; i<listaStudenti.size(); i++) {
             if(s.getUsername().equals(listaStudenti.get(i).getUsername()))
                 return false;
@@ -84,9 +87,9 @@ public class GestioneStudente implements InterfacciaStudente {
         return true;
     }
 
-    public boolean verificaMatricola(Studente s) {
+    public boolean verificaMatricolaStudente(Studente s) {
         database = dbHelper.getReadableDatabase();
-        ArrayList<Studente> listaStudenti = this.getAllStudenti();
+        ArrayList<Studente> listaStudenti = this.listaStudenti();
         for(int i=0; i<listaStudenti.size(); i++) {
             if (s.getMatricola() == listaStudenti.get(i).getMatricola()) {
                 return false;

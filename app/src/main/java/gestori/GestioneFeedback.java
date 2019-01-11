@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import database.DatabaseHelper;
 import entità.Corso;
 import entità.Feedback;
-import interfacce.InterfacciaFeedback;
 
-public class GestioneFeedback implements InterfacciaFeedback {
+public class GestioneFeedback  {
     private SQLiteDatabase database;
     private Context context;
     private DatabaseHelper dbHelper;
@@ -22,7 +21,7 @@ public class GestioneFeedback implements InterfacciaFeedback {
         dbHelper = new DatabaseHelper(context);
     }
 
-    @Override
+
     public void inserisciFeedback(Feedback feedback, Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -36,7 +35,7 @@ public class GestioneFeedback implements InterfacciaFeedback {
         db.insert("feedback", null, values);
     }
 
-    @Override
+
     public void inserisciFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -51,9 +50,9 @@ public class GestioneFeedback implements InterfacciaFeedback {
 
     }
 
-    @Override
-    public ArrayList<Feedback> getAllFeedback() {
-        ArrayList<Feedback> listaCorsi = new ArrayList<>();
+
+    public ArrayList<Feedback> listaFeedback() {
+        ArrayList<Feedback> listaFeedback = new ArrayList<>();
         String query = "SELECT * FROM feedback";
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -61,27 +60,27 @@ public class GestioneFeedback implements InterfacciaFeedback {
 
         if(c.moveToFirst()) {
             do{
-                Feedback corso = new Feedback();
-                corso.setCodiceCorso(c.getString(c.getColumnIndex("codiceCorso")));
-                corso.setTitolo(c.getString(c.getColumnIndex("titolo")));
-                corso.setDescrizione((c.getString(c.getColumnIndex("descrizione"))));
-                corso.setStato(c.getInt(c.getColumnIndex("stato")));
+                Feedback feedback = new Feedback();
+                feedback.setCodiceCorso(c.getString(c.getColumnIndex("codiceCorso")));
+                feedback.setTitolo(c.getString(c.getColumnIndex("titolo")));
+                feedback.setDescrizione((c.getString(c.getColumnIndex("descrizione"))));
+                feedback.setStato(c.getInt(c.getColumnIndex("stato")));
 
-                listaCorsi.add(corso);
+                listaFeedback.add(feedback);
             }while(c.moveToNext());
         }
-        return listaCorsi;
+        return listaFeedback;
     }
 
-    @Override
-    public void deleteFeedback(Feedback feedback) {
+
+    public void cancellaFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         db.delete("feedback", "titolo = ? AND descrizione = ?", new String[]{feedback.getTitolo(), feedback.getDescrizione()});
 
     }
 
-    @Override
+
     public void setStatoFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

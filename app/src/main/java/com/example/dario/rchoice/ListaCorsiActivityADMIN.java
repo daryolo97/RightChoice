@@ -11,15 +11,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import gestori.GestioneFeedback;
 
 
 public class ListaCorsiActivityADMIN extends Activity {
 
-    private GestioneCorso gestioneCorso;
-    private GestioneFeedback gestioneFeedback;
-    private TextView inserisci;
+    private GestoreRightChoice gestoreRightChoice;
 
 
     private CorsoActivity corsoActivity;
@@ -28,9 +27,9 @@ public class ListaCorsiActivityADMIN extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_corsi_admin);
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
-        ArrayList<String> listaNomiCorsi = gestioneCorso.getNomeCorsi();
+        ArrayList<String> listaNomiCorsi = gestoreRightChoice.getNomeCorsi();
 
         ArrayAdapter<String> arrayAdapterNome = new ArrayAdapter<String>(this, R.layout.layout_corso, R.id.nomeCorsoListView, listaNomiCorsi);
 
@@ -46,7 +45,6 @@ public class ListaCorsiActivityADMIN extends Activity {
             }
         });
 
-        inserisci = findViewById(R.id.inserisciCorsoButton);
     }
 
     public void inserisciCorso(View view) {

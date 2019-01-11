@@ -16,6 +16,8 @@ public class RisultatoQuestionarioActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_risultato_questionario);
 
+        ListView listView = findViewById(R.id.risultatoListView);
+
         ArrayList<String> listaCorsiOttenuti = getIntent().getStringArrayListExtra("array");
         ArrayList<String> listaCorsiConsigliati = new ArrayList<>();
 
@@ -24,7 +26,27 @@ public class RisultatoQuestionarioActivity extends Activity {
             number.add(i);
         Collections.shuffle(number);
 
-        listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(0)));
+        if(listaCorsiOttenuti.size() > 4) {
+            listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(0)));
+            listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(1)));
+            listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(2)));
+            listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(3)));
+
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.layout_corso, R.id.nomeCorsoListView, listaCorsiConsigliati);
+
+            listView.setAdapter(arrayAdapter);
+        } else if (listaCorsiOttenuti.size()> 0 && listaCorsiOttenuti.size()<=4) {
+            for(int count=0; count<listaCorsiOttenuti.size(); count++) {
+                listaCorsiConsigliati.add(listaCorsiOttenuti.get(count));
+            }
+
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.layout_corso, R.id.nomeCorsoListView, listaCorsiConsigliati);
+
+            listView.setAdapter(arrayAdapter);
+        }
+
+
+       /* listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(0)));
         listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(1)));
         listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(2)));
         listaCorsiConsigliati.add(listaCorsiOttenuti.get(number.get(3)));
@@ -33,7 +55,7 @@ public class RisultatoQuestionarioActivity extends Activity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.layout_corso, R.id.nomeCorsoListView, listaCorsiConsigliati);
 
         ListView listView = findViewById(R.id.risultatoListView);
-        listView.setAdapter(arrayAdapter);
+        listView.setAdapter(arrayAdapter);*/
     }
 
 

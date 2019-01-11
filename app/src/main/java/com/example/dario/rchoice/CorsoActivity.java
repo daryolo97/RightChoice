@@ -9,14 +9,16 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import entità.Corso;
 
 public class CorsoActivity extends Activity {
 
-    private GestioneCorso gestioneCorso;
+    private GestoreRightChoice gestoreRightChoice;
     private TextView TVnomeCorso, TVdocente, TVdescrizione, TVlink;
     private int count;
+    
     Intent intent, intent2;
 
     @Override
@@ -24,13 +26,13 @@ public class CorsoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_corso);
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
         TVnomeCorso = findViewById(R.id.nomeCorsoSpecifico);
         TVdocente = findViewById(R.id.nomeDocenteSpecifico);
         TVdescrizione = findViewById(R.id.descrizioneSpecifica);
         TVlink = findViewById(R.id.linkSpecifico);
 
-        ArrayList<Corso> listaCorsi= gestioneCorso.getAllCorsi();
+        ArrayList<Corso> listaCorsi= gestoreRightChoice.listaCorsi();
 
         //"prelevo" i dati dall'activity precedente
         Bundle extra = getIntent().getExtras();
@@ -44,10 +46,10 @@ public class CorsoActivity extends Activity {
         intent2 = new Intent(getApplicationContext(), InserisciFeedbackActivity.class);
         intent2.putExtra("posizione", value);
 
-        TVnomeCorso.setText(gestioneCorso.getAllCorsi().get(value).getNome().toUpperCase());
-        TVdocente.setText(gestioneCorso.getAllCorsi().get(value).getDocente());
-        TVdescrizione.setText(gestioneCorso.getAllCorsi().get(value).getDescrizione());
-        TVlink.setText(gestioneCorso.getAllCorsi().get(value).getLink());
+        TVnomeCorso.setText(gestoreRightChoice.listaCorsi().get(value).getNome().toUpperCase());
+        TVdocente.setText(gestoreRightChoice.listaCorsi().get(value).getDocente());
+        TVdescrizione.setText(gestoreRightChoice.listaCorsi().get(value).getDescrizione());
+        TVlink.setText(gestoreRightChoice.listaCorsi().get(value).getLink());
     }
 
     public void visualizzaFeedback(View v) {

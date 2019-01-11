@@ -11,21 +11,22 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 
 
 public class ListaCorsiActivity extends Activity {
 
-    private GestioneCorso gestioneCorso;
+    private GestoreRightChoice gestoreRightChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_corsi);
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
-        ArrayList<String> listaNomiCorsi = gestioneCorso.getNomeCorsi();
+        ArrayList<String> listaNomiCorsi = gestoreRightChoice.getNomeCorsi();
 
         ArrayAdapter<String> arrayAdapterNome = new ArrayAdapter<String>(this, R.layout.layout_corso, R.id.nomeCorsoListView, listaNomiCorsi);
 
@@ -40,22 +41,10 @@ public class ListaCorsiActivity extends Activity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
     }
 
     public void inserisciCorso(View v ) {
         Intent intent = new Intent(getApplicationContext(), InserisciCorsoActivityADMIN.class);
         startActivity(intent);
     }
-
-
-
-
-
-
 }

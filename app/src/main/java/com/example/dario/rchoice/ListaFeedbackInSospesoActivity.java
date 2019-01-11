@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import gestori.GestioneFeedback;
 import entità.Feedback;
@@ -16,7 +17,7 @@ import utility.CustomAdapterFeedback;
 
 public class ListaFeedbackInSospesoActivity extends Activity {
     private ListView listView;
-    private GestioneFeedback gestioneFeedback;
+    private GestoreRightChoice gestoreRightChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,9 @@ public class ListaFeedbackInSospesoActivity extends Activity {
 
         listView = findViewById(R.id.listaFeedbackInSospesoListView);
 
-        gestioneFeedback = new GestioneFeedback(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
-        GestioneCorso gestioneCorso = new GestioneCorso(getApplicationContext());
-        ArrayList<Feedback> listaFeedback = gestioneFeedback.getAllFeedback();
+        ArrayList<Feedback> listaFeedback = gestoreRightChoice.listaFeedback();
         ArrayList<Feedback> listaFeedbackInSospeso = new ArrayList<>();
 
             for (int i = 0; i < listaFeedback.size(); i++) {

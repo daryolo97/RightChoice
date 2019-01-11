@@ -7,19 +7,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import entità.Corso;
 
 public class InserisciCorsoActivityADMIN extends Activity {
 
     private EditText nome, docente, descrizione, codice, link;
-    private GestioneCorso gestioneCorso;
+    private GestoreRightChoice gestoreRightChoice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserisci_corso);
 
-        gestioneCorso = new GestioneCorso(getApplicationContext());
+        gestoreRightChoice = new GestoreRightChoice(getApplicationContext());
 
         nome = findViewById(R.id.nomeCorsoInserito);
         docente = findViewById(R.id.docenteCorsoInserito);
@@ -51,8 +52,8 @@ public class InserisciCorsoActivityADMIN extends Activity {
         } else if(!verificaLink(linkCorso)) {
             Toast.makeText(getApplicationContext(), "Il campo 'Link' deve contenere massimo100 caratteri", Toast.LENGTH_SHORT).show();
         } else {
-            if(gestioneCorso.verificaCodiceCorso(corso)) {
-                gestioneCorso.inserisciCorsi(corso);
+            if(gestoreRightChoice.verificaCodiceCorso(corso)) {
+                gestoreRightChoice.inserisciCorso(corso);
                 Toast.makeText(getApplicationContext(), "Corso inserito correttamente", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), ListaCorsiActivityADMIN.class));
                 finish();
