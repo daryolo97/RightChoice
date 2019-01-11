@@ -18,6 +18,7 @@ public class CorsoActivity extends Activity {
     private GestoreRightChoice gestoreRightChoice;
     private TextView TVnomeCorso, TVdocente, TVdescrizione, TVlink;
     private int count;
+    
     Intent intent, intent2;
 
     @Override
