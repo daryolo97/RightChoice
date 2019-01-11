@@ -1,6 +1,7 @@
 package com.example.dario.rchoice;
 
 import android.app.Activity;
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;

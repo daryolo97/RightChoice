@@ -44,6 +44,7 @@ public class HomeActivity extends Activity {
         gestoreRightChoice.inserisciCorso(corso5);
         gestoreRightChoice.inserisciCorso(corso6);
         gestoreRightChoice.inserisciCorso(corso7);
+
     }
 
     public void listaCorsiPremuta(View v) {
