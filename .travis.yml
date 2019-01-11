@@ -15,6 +15,3 @@ android:
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
     - android-$ANDROID_API_LEVEL
     - addon-google_apis-google-$ANDROID_API_LEVEL
-    
-script:
-    - ./gradlew build check
