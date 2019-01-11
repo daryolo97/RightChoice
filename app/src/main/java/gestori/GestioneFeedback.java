@@ -23,7 +23,7 @@ public class GestioneFeedback implements InterfacciaFeedback {
     }
 
     @Override
-    public long inserisciFeedback(Feedback feedback, Corso corso) {
+    public void inserisciFeedback(Feedback feedback, Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -33,13 +33,11 @@ public class GestioneFeedback implements InterfacciaFeedback {
         values.put("descrizione", feedback.getDescrizione());
         values.put("stato", feedback.getStato());
 
-        long feedback_id = db.insert("feedback", null, values);
-
-        return feedback_id;
+        db.insert("feedback", null, values);
     }
 
     @Override
-    public long inserisciFeedback(Feedback feedback) {
+    public void inserisciFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -49,9 +47,8 @@ public class GestioneFeedback implements InterfacciaFeedback {
         values.put("descrizione", feedback.getDescrizione());
         values.put("stato", feedback.getStato());
 
-        long feedback_id = db.insert("feedback", null, values);
+        db.insert("feedback", null, values);
 
-        return feedback_id;
     }
 
     @Override

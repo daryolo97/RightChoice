@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import entità.Corso;
 
 public interface InterfacciaCorso {
-    long inserisciCorsi(Corso corso);
+    void inserisciCorsi(Corso corso);
     ArrayList<Corso> getAllCorsi();
     ArrayList<String> getNomeCorsi();
     boolean verificaCodiceCorso(Corso corso);

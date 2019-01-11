@@ -22,7 +22,7 @@ public class GestioneCorso implements InterfacciaCorso {
     }
 
     @Override
-    public long inserisciCorsi(Corso corso) {
+    public void inserisciCorsi(Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -33,9 +33,8 @@ public class GestioneCorso implements InterfacciaCorso {
         values.put("descrizione", corso.getDescrizione());
         values.put("link", corso.getLink());
 
-        long corso_id = db.insert("corsi", null, values);
+        db.insert("corsi", null, values);
 
-        return corso_id;
     }
 
     @Override
