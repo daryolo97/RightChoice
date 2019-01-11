@@ -16,5 +16,8 @@ android:
     - android-$ANDROID_API_LEVEL
     - addon-google_apis-google-$ANDROID_API_LEVEL
     
+before_install:
+ - chmod +x gradlew
+
 script:
-    - ./gradlew build connectedCheck
+ - ./gradlew build connectedCheck
