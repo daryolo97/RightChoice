@@ -54,13 +54,13 @@ public class HomeActivity extends Activity {
                 "•principali metodi di rappresentazione della conoscenza, con particolare riferimento a quelli basati sulla logica del primo ordine e relativi metodi di inferenza. \n" +
                 "•rappresentazione di conoscenza incerta e metodi probabilistici di inferenza, con particolare riferimento alle reti bayesiane.\n" +
                 "•tecniche di machine learning.", "https://corsi.unisa.it/informatica-magistrale/didattica/insegnamenti?anno=2016&id=511676");
-        long corso1_id = gestioneCorso.inserisciCorsi(corso1);
-        long corso2_id = gestioneCorso.inserisciCorsi(corso2);
-        long corso3_id = gestioneCorso.inserisciCorsi(corso3);
-        long corso4_id = gestioneCorso.inserisciCorsi(corso4);
-        long corso5_id = gestioneCorso.inserisciCorsi(corso5);
-        long corso6_id = gestioneCorso.inserisciCorsi(corso6);
-        long corso7_id = gestioneCorso.inserisciCorsi(corso7);
+        gestioneCorso.inserisciCorsi(corso1);
+        gestioneCorso.inserisciCorsi(corso2);
+        gestioneCorso.inserisciCorsi(corso3);
+        gestioneCorso.inserisciCorsi(corso4);
+        gestioneCorso.inserisciCorsi(corso5);
+        gestioneCorso.inserisciCorsi(corso6);
+        gestioneCorso.inserisciCorsi(corso7);
 
 /*
 

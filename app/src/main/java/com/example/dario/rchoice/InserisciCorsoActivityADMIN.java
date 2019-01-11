@@ -52,7 +52,7 @@ public class InserisciCorsoActivityADMIN extends Activity {
             Toast.makeText(getApplicationContext(), "Il campo 'Link' deve contenere massimo100 caratteri", Toast.LENGTH_SHORT).show();
         } else {
             if(gestioneCorso.verificaCodiceCorso(corso)) {
-                long corso_id = gestioneCorso.inserisciCorsi(corso);
+                gestioneCorso.inserisciCorsi(corso);
                 Toast.makeText(getApplicationContext(), "Corso inserito correttamente", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), ListaCorsiActivityADMIN.class));
                 finish();

@@ -59,7 +59,7 @@ public class InserisciFeedbackActivity extends Activity {
             feedback.setCodiceCorso(corso.getCodice());
             feedback.setStato(0);
 
-            long feedback_id = gestioneFeedback.inserisciFeedback(feedback);
+            gestioneFeedback.inserisciFeedback(feedback);
 
             Toast.makeText(getApplicationContext(), "Feedback inserito nella lista in sospeso, attendi che la convalidazione dell'admin", Toast.LENGTH_LONG).show();
             finish();
