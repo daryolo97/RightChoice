@@ -56,4 +56,11 @@ public class GestioneAdminTest {
         assertTrue(feedback.getStato()==1);
         assertFalse(feedback.getStato()==0);
     }
+
+    @Test
+    public void verificaUsernameAdmin() {
+        gestoreRightChoice.inserisciAdmin(admin);
+        assertTrue(gestoreRightChoice.verificaUsernameAdmin("admin1"));
+        assertFalse(gestoreRightChoice.verificaUsernameAdmin(admin.getUsername()));
+    }
 }
