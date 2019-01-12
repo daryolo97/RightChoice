@@ -78,9 +78,10 @@ public class GestioneCorsoTest {
     @Test
     public void modificaCorso() {
         gestoreRightChoice.inserisciCorso(corso);
-        gestoreRightChoice.modificaCorso(corso,"testmodifca","test","test","test");
-
-        assertTrue(corso.getCodice().equals("test22"));
+        gestoreRightChoice.modificaCorso(corso,"testmodifica","test","test","test");
+        ArrayList<String> listaNomiCorsi = gestoreRightChoice.getNomeCorsi();
+        assertThat(listaNomiCorsi, hasItems("testmodifica"));
     }
+
 
 }
