@@ -60,7 +60,7 @@ public class GestioneAdminTest {
     @Test
     public void verificaUsernameAdmin() {
         gestoreRightChoice.inserisciAdmin(admin);
-        assertTrue(gestoreRightChoice.verificaUsernameAdmin("admin1"));
+        assertTrue(gestoreRightChoice.verificaUsernameAdmin("abdcsf"));
         assertFalse(gestoreRightChoice.verificaUsernameAdmin(admin.getUsername()));
     }
 }
