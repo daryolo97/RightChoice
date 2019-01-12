@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,7 +15,7 @@ import java.util.HashMap;
 
 import entità.Questionario;
 
-public class QuestionarioActivity extends Activity {
+public class QuestionarioActivity extends AppCompatActivity {
 
     private TextView TVdomanda1, TVdomanda2, TVdomanda3, TVdomanda4, TVdomanda5, TVdomanda6, TVdomanda7;
     private RadioButton risp1Domanda1Button;

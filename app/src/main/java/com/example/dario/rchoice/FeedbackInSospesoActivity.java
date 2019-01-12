@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import gestori.GestioneFeedback;
 import entità.Corso;
 import entità.Feedback;
 
-public class FeedbackInSospesoActivity extends Activity {
+public class FeedbackInSospesoActivity extends AppCompatActivity {
     private GestoreRightChoice gestoreRightChoice;
     private TextView nomeCorso, titolo, descrizione;
     private String nome;

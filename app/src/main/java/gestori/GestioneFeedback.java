@@ -22,18 +22,6 @@ public class GestioneFeedback  {
     }
 
 
-    public void inserisciFeedback(Feedback feedback, Corso corso) {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-
-        values.put("codiceCorso", corso.getCodice());
-        values.put("titolo", feedback.getTitolo());
-        values.put("descrizione", feedback.getDescrizione());
-        values.put("stato", feedback.getStato());
-
-        db.insert("feedback", null, values);
-    }
 
 
     public void inserisciFeedback(Feedback feedback) {

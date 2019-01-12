@@ -57,10 +57,7 @@ public class GestoreRightChoice implements InterfacciaRightChoice {
         gestioneCorso.cancellaCorso(corso);
     }
 
-    @Override
-    public void inserisciFeedback(Feedback feedback, Corso corso) {
-        gestioneFeedback.inserisciFeedback(feedback, corso);
-    }
+
 
 
 

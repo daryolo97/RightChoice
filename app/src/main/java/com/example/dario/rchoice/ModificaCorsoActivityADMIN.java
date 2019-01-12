@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import entità.Corso;
 
-public class ModificaCorsoActivityADMIN extends Activity {
+public class ModificaCorsoActivityADMIN extends AppCompatActivity {
 
     private GestoreRightChoice gestoreRightChoice;
     private EditText nomeCorso, docenteCorso, descrizioneCorso, linkCorso;

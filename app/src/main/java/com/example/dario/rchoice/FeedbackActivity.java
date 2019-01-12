@@ -2,6 +2,7 @@ package com.example.dario.rchoice;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import entità.Corso;
 import entità.Feedback;
 import utility.CustomAdapterFeedback;
 
-public class FeedbackActivity extends Activity {
+public class FeedbackActivity extends AppCompatActivity {
     private ListView listView;
     private GestoreRightChoice gestoreRightChoice;
 

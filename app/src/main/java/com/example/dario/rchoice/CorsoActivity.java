@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,7 +14,7 @@ import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import entità.Corso;
 
-public class CorsoActivity extends Activity {
+public class CorsoActivity extends AppCompatActivity {
 
     private GestoreRightChoice gestoreRightChoice;
     private TextView TVnomeCorso, TVdocente, TVdescrizione, TVlink;

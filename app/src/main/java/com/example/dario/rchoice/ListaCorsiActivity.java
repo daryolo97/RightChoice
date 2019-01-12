@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,7 +16,7 @@ import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 
 
-public class ListaCorsiActivity extends Activity {
+public class ListaCorsiActivity extends AppCompatActivity {
 
     private GestoreRightChoice gestoreRightChoice;
 

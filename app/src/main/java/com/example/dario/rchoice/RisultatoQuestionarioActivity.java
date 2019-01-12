@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -10,7 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class RisultatoQuestionarioActivity extends Activity {
+public class RisultatoQuestionarioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

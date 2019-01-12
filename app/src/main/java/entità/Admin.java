@@ -30,8 +30,4 @@ public class Admin {
         return password;
     }
 
-
-  public void inserisciFeedback(Feedback feedback) {
-        feedback.setStato(1);
-  }
 }

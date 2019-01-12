@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.strictmode.SqliteObjectLeakedViolation;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ import gestori.GestioneFeedback;
 import gestori.GestioneStudente;
 import entità.Admin;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
     private EditText usernameET, passwordET;
     private GestoreRightChoice gestoreRightChoice;
     private DatabaseHelper databaseHelper;

@@ -2,6 +2,7 @@ package com.example.dario.rchoice;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +15,7 @@ import gestori.GestioneFeedback;
 import entità.Corso;
 import entità.Feedback;
 
-public class InserisciFeedbackActivity extends Activity {
+public class InserisciFeedbackActivity extends AppCompatActivity {
     private GestoreRightChoice gestoreRightChoice;
     private ArrayList<Corso> listaCorsi;
     private EditText titoloET, descrizioneET;

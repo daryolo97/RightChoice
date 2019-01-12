@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -11,7 +12,7 @@ import facade.GestoreRightChoice;
 import gestori.GestioneCorso;
 import entità.Corso;
 
-public class InserisciCorsoActivityADMIN extends Activity {
+public class InserisciCorsoActivityADMIN extends AppCompatActivity {
 
     private EditText nome, docente, descrizione, codice, link;
     private GestoreRightChoice gestoreRightChoice;

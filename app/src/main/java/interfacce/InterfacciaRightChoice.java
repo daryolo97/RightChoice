@@ -14,7 +14,6 @@ public interface InterfacciaRightChoice {
     boolean verificaCodiceCorso(Corso corso);
     void modificaCorso(Corso corso, String nome, String docente, String descrizione, String link);
     void cancellaCorso(Corso corso);
-    void  inserisciFeedback(Feedback feedback, Corso corso);
     void inserisciFeedback(Feedback feedback);
     ArrayList<Feedback> listaFeedback();
     void cancellaFeedback(Feedback feedback);

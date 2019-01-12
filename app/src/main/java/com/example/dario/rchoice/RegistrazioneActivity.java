@@ -2,6 +2,7 @@ package com.example.dario.rchoice;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,7 +11,7 @@ import facade.GestoreRightChoice;
 import gestori.GestioneStudente;
 import entità.Studente;
 
-public class RegistrazioneActivity extends Activity {
+public class RegistrazioneActivity extends AppCompatActivity {
     private EditText usernameET, passwordET, confermaPaswordET, matricolaET, nomeET, cognomeET;
     private GestoreRightChoice gestoreRightChoice;
     private String username, password, nome, cognome;

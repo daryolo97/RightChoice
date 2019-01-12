@@ -3,6 +3,7 @@ package com.example.dario.rchoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import gestori.GestioneFeedback;
 import entità.Corso;
 import entità.Questionario;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends AppCompatActivity {
     private GestoreRightChoice gestoreRightChoice;
 
 
