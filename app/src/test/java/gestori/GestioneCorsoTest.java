@@ -75,4 +75,12 @@ public class GestioneCorsoTest {
         assertFalse(gestoreRightChoice.verificaCodiceCorso(corso1));
     }
 
+    @Test
+    public void modificaCorso() {
+        gestoreRightChoice.inserisciCorso(corso);
+        gestoreRightChoice.modificaCorso(corso,"testmodifca","test","test","test");
+
+        assertTrue(corso.getCodice().equals("test22"));
+    }
+
 }
