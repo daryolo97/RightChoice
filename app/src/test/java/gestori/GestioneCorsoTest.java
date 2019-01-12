@@ -18,6 +18,7 @@ import facade.GestoreRightChoice;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class)
@@ -86,8 +87,9 @@ public class GestioneCorsoTest {
 
     @Test
     public void cancellaCorso() {
+        gestoreRightChoice.inserisciCorso(corso);
         gestoreRightChoice.cancellaCorso(corso);
         ArrayList<Corso> lista = gestoreRightChoice.listaCorsi();
-        assertThat(lista,hasItems(corso));
+        assertThat(lista,not(hasItems(corso)));
     }
 }
