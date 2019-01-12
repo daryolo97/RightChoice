@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import database.DatabaseHelper;
 import entità.Admin;
 import entità.Corso;
+import entità.Feedback;
 import facade.GestoreRightChoice;
 
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
@@ -23,6 +24,7 @@ public class GestioneAdminTest {
     private Context context;
     private GestoreRightChoice gestoreRightChoice;
     private Admin admin,admin1;
+    private Feedback feedback;
 
     @Before
     public void setUp() throws Exception {
@@ -30,7 +32,8 @@ public class GestioneAdminTest {
         databaseHelper = new DatabaseHelper(context);
         gestoreRightChoice = new GestoreRightChoice(context);
         admin =  new Admin("admin1","admin");
-        admin1 =  new Admin();
+        feedback = new Feedback();
+
     }
 
     @Test
@@ -45,5 +48,12 @@ public class GestioneAdminTest {
         gestoreRightChoice.inserisciAdmin(admin);
         assertTrue(gestoreRightChoice.loginAdmin("admin1","admin"));
         assertFalse(gestoreRightChoice.loginAdmin("test","test"));
+    }
+
+    @Test
+    public void convalidaFeedback() {
+        gestoreRightChoice.convalidaFeedback(feedback);
+        assertTrue(feedback.getStato()==1);
+        assertFalse(feedback.getStato()==0);
     }
 }
