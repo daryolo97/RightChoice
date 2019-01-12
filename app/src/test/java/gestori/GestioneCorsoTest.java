@@ -84,4 +84,10 @@ public class GestioneCorsoTest {
     }
 
 
+    @Test
+    public void cancellaCorso() {
+        gestoreRightChoice.cancellaCorso(corso);
+        ArrayList<Corso> lista = gestoreRightChoice.listaCorsi();
+        assertThat(lista,hasItems(corso));
+    }
 }
