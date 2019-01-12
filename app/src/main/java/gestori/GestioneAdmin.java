@@ -52,7 +52,7 @@ public class GestioneAdmin {
     }
 
     public boolean loginAdmin(String username, String password) {
-        Admin admin= getAdmin();
+        Admin admin = getAdmin();
         if(admin.getUsername().equals(username) && admin.getPassword().equals(password)) {
             return true;
         }
