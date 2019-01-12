@@ -44,6 +44,6 @@ public class GestioneAdminTest {
     public void loginAdmin() {
         gestoreRightChoice.inserisciAdmin(admin);
         assertTrue(gestoreRightChoice.loginAdmin("admin1","admin"));
-        assertFalse(gestoreRightChoice.loginAdmin("admin1","admin"));
+        assertFalse(gestoreRightChoice.loginAdmin("test","test"));
     }
 }
