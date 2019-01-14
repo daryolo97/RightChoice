@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:orientation="vertical"
-    tools:context=".ListaCorsiActivityADMIN"
+    tools:context=".ListaCorsiActivityAdmin"
 >
     <LinearLayout
         android:layout_width="wrap_content"

@@ -24,13 +24,13 @@
         <activity android:name=".CorsoActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".InserisciFeedbackActivity" />
-        <activity android:name=".HomeActivityADMIN" />
+        <activity android:name=".HomeActivityAdmin" />
         <activity android:name=".ListaFeedbackInSospesoActivity" />
         <activity android:name=".FeedbackInSospesoActivity" />
-        <activity android:name=".ListaCorsiActivityADMIN" />
-        <activity android:name=".InserisciCorsoActivityADMIN" />
-        <activity android:name=".CorsoActivityADMIN" />
-        <activity android:name=".ModificaCorsoActivityADMIN" />
+        <activity android:name=".ListaCorsiActivityAdmin" />
+        <activity android:name=".InserisciCorsoActivityAdmin" />
+        <activity android:name=".CorsoActivityAdmin" />
+        <activity android:name=".ModificaCorsoActivityAdmin" />
         <activity android:name=".RisultatoQuestionarioActivity" />
     </application>
 

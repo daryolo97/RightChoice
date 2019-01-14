@@ -67,7 +67,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/feedbackForm"
-        android:onClick="CreaFeedback"
+        android:onClick="creaFeedback"
         app:cardBackgroundColor="#FFA000"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp">

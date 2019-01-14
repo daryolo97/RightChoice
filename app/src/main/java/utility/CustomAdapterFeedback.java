@@ -9,33 +9,31 @@ import android.widget.TextView;
 
 import com.example.dario.rchoice.R;
 
+import entity.Feedback;
+
 import java.util.List;
 
-import entità.Feedback;
-
 public class CustomAdapterFeedback extends ArrayAdapter<Feedback> {
+  private Context context;
 
-    private Context context;
+  public CustomAdapterFeedback(Context context, int resource, List<Feedback> objects) {
+    super(context, resource, objects);
+    this.context = context;
+  }
 
-    public CustomAdapterFeedback(Context context, int resource, List<Feedback> objects) {
-        super(context, resource, objects);
-        this.context = context;
-    }
+  @Override
+  public View getView(int position, View convertView, ViewGroup parent) {
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    convertView = LayoutInflater.from(context).inflate(R.layout.layout_feedback, null);
+    TextView tvTitoloFeedback = convertView.findViewById(R.id.titoloFeedbackListView);
+    TextView tvMessaggioFeedback = convertView.findViewById(R.id.messaggioFeedbackListView);
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.layout_feedback, null);
-        TextView TVtitoloFeedback = convertView.findViewById(R.id.titoloFeedbackListView);
-        TextView TVmessaggioFeedback = convertView.findViewById(R.id.messaggioFeedbackListView);
+    Feedback feedback = getItem(position);
+    tvTitoloFeedback.setText(feedback.getTitolo());
+    tvMessaggioFeedback.setText(feedback.getDescrizione());
 
+    return convertView;
 
-        Feedback feedback = getItem(position);
-        TVtitoloFeedback.setText(feedback.getTitolo());
-        TVmessaggioFeedback.setText(feedback.getDescrizione());
-
-        return convertView;
-
-    }
+  }
 
 }

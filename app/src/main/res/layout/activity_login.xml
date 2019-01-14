@@ -87,7 +87,7 @@
             android:text="@string/registrati"
             android:textColor="#fff"
             android:textStyle=""
-            android:onClick="RegistrazionePremuta"
+            android:onClick="registrazionePremuta"
             android:layout_gravity="center"
             android:layout_marginBottom="6dp" />
 
