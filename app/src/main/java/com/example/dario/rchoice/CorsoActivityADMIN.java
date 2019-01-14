@@ -44,6 +44,10 @@ public class CorsoActivityADMIN extends AppCompatActivity {
         TVlink.setText(gestoreRightChoice.listaCorsi().get(value).getLink());
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata inviandole dei dati
+     * @param v rappresenta l'activity da lanciare
+     */
     public void eliminaCorso(View v) {
         gestoreRightChoice.cancellaCorso(gestoreRightChoice.listaCorsi().get(value));
         startActivity(new Intent(getApplicationContext(), ListaCorsiActivityADMIN.class));
@@ -52,6 +56,10 @@ public class CorsoActivityADMIN extends AppCompatActivity {
     }
 
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata inviandole dei dati
+     * @param v rappresenta la view cliccata
+     */
     public void lanciaModificaCorso(View v) {
         Intent intent = new Intent(getApplicationContext(), ModificaCorsoActivityADMIN.class);
         intent.putExtra("posizione", value);

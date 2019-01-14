@@ -21,7 +21,10 @@ public class GestioneStudente {
     }
 
 
-
+    /**
+     * Metodo che permette di inserire uno studente all'interno della tabella 'studenti' all'interno del database
+     * @param studente rappresenta lo studente che si vuole inserire nel database
+     */
     public void inserisciStudente(Studente studente) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -37,7 +40,10 @@ public class GestioneStudente {
 
     }
 
-
+    /**
+     * Metodo che permette di elaborare la lista di tutti gli studenti presenti nella tabella 'studenti' all'interno del database
+     * @return una lista contenente tutti gli studenti presenti nel database
+     */
     public ArrayList<Studente> listaStudenti() {
         ArrayList<Studente> listaStudenti = new ArrayList<>();
         String query = "SELECT * FROM studenti";
@@ -61,6 +67,12 @@ public class GestioneStudente {
         return listaStudenti;
     }
 
+    /**
+     * Metodo che permette di vedere di vedere se i parametri 'username' e 'password' sono presenti all'interno della tabella 'studenti' all'interno del database
+     * @param username rappresenta la stringa dell'username da verificare
+     * @param password rappresenta la stringa della password da verificare
+     * @return booleano che indica l'esistenza dell'username e della password(true) o la non esistenza dell'username e della password(false)
+     */
     public boolean verificaEsistenzaStudenti(String username, String password) {
         ArrayList<Studente> listaStudenti = this.listaStudenti();
 
@@ -72,22 +84,32 @@ public class GestioneStudente {
         return false;
     }
 
-    public boolean verificaUsernameStudente(Studente s) {
+    /**
+     * Metodo che verifica se un'username di uno studente è già presente all'interno della colonna 'username' della tabella studenti all'interno del database
+     * @param studente rappresenta lo studente di cui si vuole verificare l'username
+     * @return booleano che indica l'esistenza(false) o la non esistenza(true) dell'username nel database
+     */
+    public boolean verificaUsernameStudente(Studente studente) {
 
-        if (s == null) {
+        if (studente == null) {
             return false;
         }
 
         ArrayList<Studente> listaStudenti = this.listaStudenti();
         for(int i=0; i<listaStudenti.size(); i++) {
-            if(s.getUsername().equals(listaStudenti.get(i).getUsername()))
+            if(studente.getUsername().equals(listaStudenti.get(i).getUsername()))
                 return false;
         }
 
         return true;
     }
 
-    public boolean verificaMatricolaStudente(Studente s) {
+    /**
+     * Metodo che verifica se la matricola di uno studente è già presente all'interno della colonna 'matricola' della tabella studenti all'interno del database
+     * @param studente rappresenta lo studente di cui si vuole verificare la matricola
+     * @return booleano che indica l'esistenza(false) o la non esistenza(true) della matricola nel database
+     */
+    public boolean verificaMatricolaStudente(Studente studente) {
         database = dbHelper.getReadableDatabase();
 
         if (s == null) {
@@ -96,16 +118,12 @@ public class GestioneStudente {
 
         ArrayList<Studente> listaStudenti = this.listaStudenti();
         for(int i=0; i<listaStudenti.size(); i++) {
-            if (s.getMatricola() == listaStudenti.get(i).getMatricola()) {
+            if (studente.getMatricola() == listaStudenti.get(i).getMatricola()) {
                 return false;
             }
         }
-
-        closeDB();
         return true;
     }
 
-    public void closeDB() {
-        dbHelper.closeDB();
-    }
+
 }

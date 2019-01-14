@@ -20,13 +20,19 @@ public class HomeActivityADMIN extends AppCompatActivity {
         setContentView(R.layout.activity_home_admin);
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void listaCorsiPremuta(View v) {
         Intent intent = new Intent(getApplicationContext(), ListaCorsiActivityADMIN.class);
         startActivity(intent);
     }
 
-
-
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata e di terminare l'activity corrente
+     * @param v rappresenta la view cliccata
+     */
     public void listaFeedbackInSospesoPremuto(View v) {
         Intent intent = new Intent(getApplicationContext(), ListaFeedbackInSospesoActivity.class);
         startActivity(intent);

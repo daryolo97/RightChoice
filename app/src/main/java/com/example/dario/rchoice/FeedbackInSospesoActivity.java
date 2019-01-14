@@ -66,6 +66,10 @@ public class FeedbackInSospesoActivity extends AppCompatActivity {
         descrizione.setText(listaFeedbackInSospeso.get(value).getDescrizione());
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void convalidaButton(View v) {
        gestoreRightChoice.setStatoFeedback(listaFeedbackInSospeso.get(value));
        startActivity(new Intent(getApplicationContext(), ListaFeedbackInSospesoActivity.class));
@@ -73,6 +77,10 @@ public class FeedbackInSospesoActivity extends AppCompatActivity {
        Toast.makeText(getApplicationContext(), "Feedback convalidato", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void rifiutaButton(View v) {
         gestoreRightChoice.cancellaFeedback(listaFeedbackInSospeso.get(value));
         finish();

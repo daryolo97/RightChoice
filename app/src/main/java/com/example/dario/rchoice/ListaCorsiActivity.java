@@ -44,8 +44,4 @@ public class ListaCorsiActivity extends AppCompatActivity {
         });
     }
 
-    public void inserisciCorso(View v ) {
-        Intent intent = new Intent(getApplicationContext(), InserisciCorsoActivityADMIN.class);
-        startActivity(intent);
-    }
 }

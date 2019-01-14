@@ -109,7 +109,7 @@
         android:id="@+id/inserisciCorsoTasto"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:onClick="inserisciCorso"
+        android:onClick="verificaCampiInserimentoCorso"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/CorsoForm"

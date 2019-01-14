@@ -14,6 +14,9 @@ import gestori.GestioneFeedback;
 import gestori.GestioneStudente;
 import interfacce.InterfacciaRightChoice;
 
+/**
+ * Questa classe contiente l'implementazione di tutti i metodi che sono descritti nell'interfaccia 'interfacciaRightChoice'
+ */
 public class GestoreRightChoice implements InterfacciaRightChoice {
     private GestioneCorso gestioneCorso;
     private GestioneFeedback gestioneFeedback;
@@ -56,10 +59,6 @@ public class GestoreRightChoice implements InterfacciaRightChoice {
     public void cancellaCorso(Corso corso) {
         gestioneCorso.cancellaCorso(corso);
     }
-
-
-
-
 
     @Override
     public void inserisciFeedback(Feedback feedback) {

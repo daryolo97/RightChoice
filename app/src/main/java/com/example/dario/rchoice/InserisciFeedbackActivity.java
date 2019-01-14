@@ -37,6 +37,10 @@ public class InserisciFeedbackActivity extends AppCompatActivity {
         listaCorsi = gestoreRightChoice.listaCorsi();
     }
 
+    /**
+     * Metodo che permette di creare un feedback da inserire nella lista dei feedback in sospeso e di terminare l'activity corrente al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void CreaFeedback(View v) {
         Corso corso = listaCorsi.get(value);
 
@@ -44,11 +48,9 @@ public class InserisciFeedbackActivity extends AppCompatActivity {
         String descrizione = descrizioneET.getText().toString();
 
 
-        if(verificaTitolo(titolo).equals("vuoto")) {
-            Toast.makeText(getApplicationContext(), "Il campo 'Titolo' non può essere vuoto", Toast.LENGTH_SHORT).show();
-        } else if(verificaTitolo(titolo).equals("lunga")) {
-            Toast.makeText(getApplicationContext(), "Il campo 'Titolo' non può contenere più di 40 caratteri", Toast.LENGTH_SHORT).show();
-        } else if(!verificaDescrizione(descrizione)) {
+        if(!verificaTitolo(titolo)) {
+            Toast.makeText(getApplicationContext(), "Il campo 'Titolo' non può essere vuoto e non può contenere più di 40 caratteri", Toast.LENGTH_SHORT).show();
+        }else if(!verificaDescrizione(descrizione)) {
             Toast.makeText(getApplicationContext(), "Il campo 'Descrizione' non può essere vuoto", Toast.LENGTH_SHORT).show();
         } else {
             Feedback feedback = new Feedback();
@@ -60,20 +62,30 @@ public class InserisciFeedbackActivity extends AppCompatActivity {
 
             gestoreRightChoice.inserisciFeedback(feedback);
 
-            Toast.makeText(getApplicationContext(), "Feedback inserito nella lista in sospeso, attendi che la convalidazione dell'admin", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Feedback inserito nella lista in sospeso, attendi la convalidazione dell'admin", Toast.LENGTH_LONG).show();
             finish();
         }
     }
 
-    public String verificaTitolo(String titolo) {
+    /**
+     * Metodo che permette di verificare la correttezza del formato del titolo del feedback che vuole inserire l'utente
+     * @param titolo rappresenta la stringa del titolo del feedback che si vuole creare
+     * @return booleano che indica se il titolo è vuoto o contiente un numero di caratteri > 40(false) o il contrario(true)
+     */
+    public boolean verificaTitolo(String titolo) {
         if(titolo.equals("")) {
-            return "vuoto";
+            return false;
         } else if(titolo.length()>40) {
-            return "lunga";
+            return false;
         }
-        return "ok";
+        return true;
     }
 
+    /**
+     * Metodo che permette di verificare la correttezza del formato della descrizione del feedback che vuole inserire l'utente
+     * @param descrizione rappresenta la stringa della descrizione del feedback che si vuole creare
+     * @return booleano che indica se il campo descrizione è vuoto(false) o il contrario(true)
+     */
     public boolean verificaDescrizione(String descrizione) {
         if(descrizione.equals("")) {
             return false;

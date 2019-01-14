@@ -48,6 +48,10 @@ public class ListaCorsiActivityADMIN extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata e di terminare l'activity corrente
+     * @param view rappresenta la view cliccata
+     */
     public void inserisciCorso(View view) {
         Intent intent = new Intent(getApplicationContext(), InserisciCorsoActivityADMIN.class);
         startActivity(intent);

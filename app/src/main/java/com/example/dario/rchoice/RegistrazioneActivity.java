@@ -34,6 +34,10 @@ public class RegistrazioneActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo che permette di effettuare la registrazione di un utente, di lanciare l'activity al tocco della view cui è legata e di terminare l'activity corrente
+     * @param v rappresenta la view cliccata
+     */
     public void confermaRegistrazionePremuto(View v) {
         matricola = Integer.parseInt(matricolaET.getText().toString());
         username = usernameET.getText().toString();
@@ -65,6 +69,10 @@ public class RegistrazioneActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo che permette di terminare l'activity corrente
+     * @param v rappresenta la view cliccata
+     */
     public void tornaSchermataLogin(View v) {
         finish();
     }

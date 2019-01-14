@@ -32,7 +32,11 @@ public class InserisciCorsoActivityADMIN extends AppCompatActivity {
 
     }
 
-    public void inserisciCorso(View v) {
+    /**
+     * Metodo che permette di verificare che la correttezza di tutti i campi del form per l'inserimento dei corsi e in tal caso, di lanciare l'activity
+     * @param v rappresenta la view cliccata
+     */
+    public void verificaCampiInserimentoCorso(View v) {
 
         String nomeCorso = nome.getText().toString();
         String docenteCorso = docente.getText().toString();
@@ -64,6 +68,11 @@ public class InserisciCorsoActivityADMIN extends AppCompatActivity {
         }
     }
 
+    /**
+     * Metodo che permette di verificare se il campo 'nome del corso' è vuoto
+     * @param nome rappresenta la stringa del nome del corso che l'admin ha inserito
+     * @return booleano che indica se il campo 'nome del corso' è vuoto(false) o se non lo è(true)
+     */
     public boolean verificaNome(String nome) {
         if(nome.equals("")) {
             return false;
@@ -71,6 +80,11 @@ public class InserisciCorsoActivityADMIN extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Metodo che permette di verificare se il campo 'docente del corso' è vuoto
+     * @param docente rappresenta la stringa del nome del docente del corso che l'admin ha inserito
+     * @return booleano che indica se il campo 'docente del corso' è vuoto(false) o se non lo è(true)
+     */
     public boolean verificaNomeDocente(String docente) {
         if(docente.equals("")) {
             return false;
@@ -78,6 +92,11 @@ public class InserisciCorsoActivityADMIN extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Metodo che permette di verificare se il campo 'descrizione del corso' è vuoto
+     * @param descrizione rappresenta la stringa della descrizione del corso che l'admin ha inserito
+     * @return booleano che indica se il campo 'descrizione del corso' è vuoto(false) o se non lo è(true)
+     */
     public boolean verificaDescrizione(String descrizione) {
         if(descrizione.equals("")) {
             return false;
@@ -85,6 +104,11 @@ public class InserisciCorsoActivityADMIN extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Metodo che permette di verificare se il campo 'codice del corso' contiene un numero di caratteri diverso da 6
+     * @param codice rappresenta la stringa del codice del corso che l'admin ha inserito
+     * @return booleano che indica se il campo 'codice del corso' contiene un numero di caratteri diverso da 6(false) o il contrario(true)
+     */
     public boolean verificaCodice(String codice) {
         if(codice.length()!=6) {
             return false;
@@ -92,6 +116,11 @@ public class InserisciCorsoActivityADMIN extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Metodo che permette di verificare se il campo 'link del corso' contiene un numero di caratteri > 100
+     * @param link rappresenta la stringa del link del corso che l'admin ha inserito
+     * @return booleano che indica se il campo 'link del corso' contiene un numero di caratteri > 100(false) o il contrario(true)
+     */
     public boolean verificaLink(String link) {
         if(link.length()>100) {
             return false;

@@ -21,9 +21,10 @@ public class GestioneFeedback  {
         dbHelper = new DatabaseHelper(context);
     }
 
-
-
-
+    /**
+     * Metodo che permette di inserire un feedback all'interno della tabella 'feedback' all'interno del database
+     * @param feedback rappresenta il feedback da inserire all'interno del database
+     */
     public void inserisciFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -38,7 +39,10 @@ public class GestioneFeedback  {
 
     }
 
-
+    /**
+     * metodo che permette di elaborare la lista dei feedback presenti all'interno della tabella 'feedback' all'interno del database
+     * @return la lista contenente tutti i feedback presenti nel database
+     */
     public ArrayList<Feedback> listaFeedback() {
         ArrayList<Feedback> listaFeedback = new ArrayList<>();
         String query = "SELECT * FROM feedback";
@@ -60,7 +64,10 @@ public class GestioneFeedback  {
         return listaFeedback;
     }
 
-
+    /**
+     * Metodo che permette di cancellare un feedback presente all'interno della tabella 'feedback' all'interno del database
+     * @param feedback rappresenta il feedback da cancellare dal database
+     */
     public void cancellaFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -68,7 +75,10 @@ public class GestioneFeedback  {
 
     }
 
-
+    /**
+     * Metodo che pone lo 'stato' del feedback da 0 a 1
+     * @param feedback rappresenta il feedback da settare
+     */
     public void setStatoFeedback(Feedback feedback) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

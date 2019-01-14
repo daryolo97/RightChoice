@@ -53,6 +53,10 @@ public class ModificaCorsoActivityADMIN extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo che permette di effettuare le modifiche su un corso, di lanciare l'activity al tocco della view cui è legata e di terminare l'activity corrente
+     * @param v rappresenta la view cliccata
+     */
     public void modificaCorso(View v) {
 
         nome = nomeCorso.getText().toString();

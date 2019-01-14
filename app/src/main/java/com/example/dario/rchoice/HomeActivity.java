@@ -48,11 +48,20 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
+
     public void listaCorsiPremuta(View v) {
         Intent intent = new Intent(getApplicationContext(), ListaCorsiActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void questionarioPremuto(View v) {
         Intent intent = new Intent(getApplicationContext(), QuestionarioActivity.class);
         startActivity(intent);

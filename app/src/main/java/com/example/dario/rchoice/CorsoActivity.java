@@ -18,7 +18,6 @@ public class CorsoActivity extends AppCompatActivity {
 
     private GestoreRightChoice gestoreRightChoice;
     private TextView TVnomeCorso, TVdocente, TVdescrizione, TVlink;
-    private int count;
 
     Intent intent, intent2;
 
@@ -53,14 +52,26 @@ public class CorsoActivity extends AppCompatActivity {
         TVlink.setText(gestoreRightChoice.listaCorsi().get(value).getLink());
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void visualizzaFeedback(View v) {
         startActivity(intent);
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void inserisciFeedback(View v) {
         startActivity(intent2);
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void apriLink(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(TVlink.getText().toString()));
         startActivity(intent);

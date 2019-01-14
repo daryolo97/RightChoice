@@ -42,11 +42,13 @@ public class LoginActivity extends AppCompatActivity {
         databaseHelper.closeDB();
     }
 
+    /**
+     * Metodo che permette di effettuare il login per accedere al sistema
+     * @param v rappresenta la view cliccata
+     */
     public void loginPremuto (View v) {
         String username = usernameET.getText().toString();
         String password = passwordET.getText().toString();
-
-
 
         if(gestoreRightChoice.verificaEsistenzaStudenti(username, password)) {
             setHomeActivity();
@@ -63,24 +65,32 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata
+     * @param v rappresenta la view cliccata
+     */
     public void RegistrazionePremuta (View v) {
-        setRegisterActivity();
-
+        Intent intent = new Intent(getApplicationContext(), RegistrazioneActivity.class);
+        startActivity(intent);
     }
 
+    /**
+     * Metodo che permette di istanziare l'intent che serve a lanciare l'activity
+     */
     public void setAdminActivity() {
         Intent intent = new Intent(getApplicationContext(), HomeActivityADMIN.class);
         startActivity(intent);
     }
+
+
+    /**
+     * Metodo che permette di istanziare l'intent che serve a lanciare l'activity
+     */
     public void setHomeActivity() {
         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(intent);
 
     }
 
-    public void setRegisterActivity() {
-        Intent intent = new Intent(getApplicationContext(), RegistrazioneActivity.class);
-        startActivity(intent);
-    }
 
 }

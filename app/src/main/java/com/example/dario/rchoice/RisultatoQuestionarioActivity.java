@@ -59,7 +59,10 @@ public class RisultatoQuestionarioActivity extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);*/
     }
 
-
+    /**
+     * Metodo che permette di lanciare l'activity al tocco della view cui è legata e di terminare l'activity corrente
+     * @param v rappresenta la view cliccata
+     */
     public void VaiAListaCorsi(View v) {
         Intent intent = new Intent(getApplicationContext(), ListaCorsiActivity.class);
         startActivity(intent);

@@ -21,7 +21,10 @@ public class GestioneCorso  {
         dbHelper = new DatabaseHelper(context);
     }
 
-
+    /**
+     * Metodo che inserisce il corso nella tabella 'corsi' all'interno del database
+     * @param corso rappresenta il corso da inserire
+     */
     public void inserisciCorso(Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -38,6 +41,10 @@ public class GestioneCorso  {
     }
 
 
+    /**
+     *Metodo che restituisce la lista dei corsi presenti nella tabella 'corsi' all'interno del database
+     * @return La lista contenente tutti i corsi presenti nella tabella 'corsi' all'interno del database
+     */
     public ArrayList<Corso> listaCorsi() {
         ArrayList<Corso> listaCorsi = new ArrayList<>();
         String query = "SELECT * FROM corsi";
@@ -62,6 +69,10 @@ public class GestioneCorso  {
     }
 
 
+    /**
+     * Metodo che elabora la lista dei nomi di tutti i corsi presenti nella tabella 'corsi' all'interno del database
+     * @return una lista contenente il nome dei corsi presenti presenti nella tabella 'corsi' all'interno del database
+     */
     public ArrayList<String> getNomeCorsi() {
         ArrayList<String> listaNomiCorsi = new ArrayList<>();
         String query = "SELECT nome FROM corsi";
@@ -81,6 +92,11 @@ public class GestioneCorso  {
     }
 
 
+    /**
+     * Metodo che verifica se il codice del corso desiderato è già presente all'interno della colonna 'codice' della tabella 'corsi' all'interno del database
+     * @param corso rappresenta il corso di cui si vuole verifica l'esistenza del codice
+     * @return
+     */
     public boolean verificaCodiceCorso(Corso corso) {
         database = dbHelper.getReadableDatabase();
         ArrayList<Corso> listaCorsi = this.listaCorsi();
@@ -93,7 +109,14 @@ public class GestioneCorso  {
         return true;
     }
 
-
+    /**
+     * Metodo che permette di modificare le informazioni relative ad un corso, aggiornando la riga della tabella 'corsi' in questione
+     * @param corso rappresenta il corso che si vuole modificare
+     * @param nome rappresenta il nuovo nome da dare al corso
+     * @param docente rappresenta il nuovo nome del docente del corso
+     * @param descrizione rappresenta la nuova descrizione del corso
+     * @param link rappresenta il nuovo link del corso
+     */
     public void modificaCorso(Corso corso, String nome, String docente, String descrizione, String link) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -106,7 +129,10 @@ public class GestioneCorso  {
         db.update("corsi", contentValues, "codice=?", new String[]{corso.getCodice()});
     }
 
-
+    /**
+     * Metodo che permette di cancellare un corso dalla tabaella 'corsi' all'interno del database
+     * @param corso rappresenta il corso che si vuole eliminare
+     */
     public void cancellaCorso(Corso corso) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
