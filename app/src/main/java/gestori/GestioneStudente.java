@@ -89,6 +89,11 @@ public class GestioneStudente {
 
     public boolean verificaMatricolaStudente(Studente s) {
         database = dbHelper.getReadableDatabase();
+
+        if (s == null) {
+            return false;
+        }
+
         ArrayList<Studente> listaStudenti = this.listaStudenti();
         for(int i=0; i<listaStudenti.size(); i++) {
             if (s.getMatricola() == listaStudenti.get(i).getMatricola()) {

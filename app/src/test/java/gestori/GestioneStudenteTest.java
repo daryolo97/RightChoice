@@ -33,7 +33,7 @@ public class GestioneStudenteTest {
         databaseHelper = new DatabaseHelper(context);
         gestoreRightChoice = new GestoreRightChoice(context);
         studentetest = new Studente(123435,"miky","miky97","michele","ruocco");
-        studentetest1 = new Studente(123455,"miky","miky97","michele","ruocco");
+        studentetest1 = new Studente(123455,"miky12","miky97","michele","ruocco");
     }
     @Test
     public void inserisciStudente() {
@@ -53,9 +53,17 @@ public class GestioneStudenteTest {
 
     @Test
     public void verificaUsernameStudente() {
-        gestoreRightChoice.inserisciStudente(studentetest1);
+        gestoreRightChoice.inserisciStudente(studentetest);
         assertFalse(gestoreRightChoice.verificaUsernameStudente(studente));
         assertFalse(gestoreRightChoice.verificaUsernameStudente(studentetest));
         assertTrue(gestoreRightChoice.verificaUsernameStudente(studentetest1));
+    }
+
+    @Test
+    public void verificaMatricolaStudente() {
+        gestoreRightChoice.inserisciStudente(studentetest);
+        assertFalse(gestoreRightChoice.verificaMatricolaStudente(studente));
+        assertFalse(gestoreRightChoice.verificaMatricolaStudente(studentetest));
+        assertTrue(gestoreRightChoice.verificaMatricolaStudente(studentetest1));
     }
 }
