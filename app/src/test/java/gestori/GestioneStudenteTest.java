@@ -33,15 +33,20 @@ public class GestioneStudenteTest {
         databaseHelper = new DatabaseHelper(context);
         gestoreRightChoice = new GestoreRightChoice(context);
         studentetest = new Studente(123435,"miky","miky97","michele","ruocco");
-        studentetest1 = new Studente(123435,"miky","miky97","michele","ruocco");
+        studentetest1 = new Studente(123455,"miky","miky97","michele","ruocco");
     }
     @Test
     public void inserisciStudente() {
         gestoreRightChoice.inserisciStudente(studentetest);
-        System.out.println(studentetest);
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
         ArrayList<Studente> listastudenti = gestoreRightChoice.listaStudenti();
         assertTrue(listastudenti.get(0).getMatricola()==studentetest.getMatricola());
         assertFalse(listastudenti.get(0).getMatricola()==studentetest1.getMatricola());
+    }
+
+
+    @Test
+    public void verificaEsistenzaStudenti() {
+
     }
 }
