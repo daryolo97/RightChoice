@@ -33,7 +33,7 @@ public class CorsoActivity extends AppCompatActivity {
         TVdescrizione = findViewById(R.id.descrizioneSpecifica);
         TVlink = findViewById(R.id.linkSpecifico);
 
-        ArrayList<Corso> listaCorsi= gestoreRightChoice.listaCorsi();
+        ArrayList<Corso> listaCorsi = gestoreRightChoice.listaCorsi();
 
         //"prelevo" i dati dall'activity precedente
         Bundle extra = getIntent().getExtras();

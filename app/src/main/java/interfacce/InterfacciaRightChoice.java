@@ -19,7 +19,7 @@ public interface InterfacciaRightChoice {
     void cancellaFeedback(Feedback feedback);
     void setStatoFeedback(Feedback feedback);
     void inserisciStudente(Studente studente);
-    ArrayList<Studente> listaStudenti(Studente studente);
+    ArrayList<Studente> listaStudenti();
     boolean verificaEsistenzaStudenti(String username, String password);
     boolean verificaUsernameStudente(Studente s);
     boolean verificaMatricolaStudente(Studente s);

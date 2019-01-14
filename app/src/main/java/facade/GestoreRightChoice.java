@@ -87,7 +87,7 @@ public class GestoreRightChoice implements InterfacciaRightChoice {
     }
 
     @Override
-    public ArrayList<Studente> listaStudenti(Studente studente) {
+    public ArrayList<Studente> listaStudenti() {
         return gestioneStudente.listaStudenti();
     }
 
