@@ -112,7 +112,7 @@ public class GestioneStudente {
     public boolean verificaMatricolaStudente(Studente studente) {
         database = dbHelper.getReadableDatabase();
 
-        if (s == null) {
+        if (studente == null) {
             return false;
         }
 
