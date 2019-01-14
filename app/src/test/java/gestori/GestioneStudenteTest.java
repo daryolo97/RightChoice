@@ -25,7 +25,7 @@ public class GestioneStudenteTest {
     private DatabaseHelper databaseHelper;
     private Context context;
     private GestoreRightChoice gestoreRightChoice;
-    private Studente studentetest,studentetest1;
+    private Studente studentetest,studentetest1,studente;
 
     @Before
     public void setUp() throws Exception {
@@ -38,7 +38,6 @@ public class GestioneStudenteTest {
     @Test
     public void inserisciStudente() {
         gestoreRightChoice.inserisciStudente(studentetest);
-        SQLiteDatabase db = databaseHelper.getWritableDatabase();
         ArrayList<Studente> listastudenti = gestoreRightChoice.listaStudenti();
         assertTrue(listastudenti.get(0).getMatricola()==studentetest.getMatricola());
         assertFalse(listastudenti.get(0).getMatricola()==studentetest1.getMatricola());
@@ -47,6 +46,16 @@ public class GestioneStudenteTest {
 
     @Test
     public void verificaEsistenzaStudenti() {
+        gestoreRightChoice.inserisciStudente(studentetest);
+        assertTrue(gestoreRightChoice.verificaEsistenzaStudenti("miky","miky97"));
+        assertFalse(gestoreRightChoice.verificaEsistenzaStudenti("test","test"));
+    }
 
+    @Test
+    public void verificaUsernameStudente() {
+        gestoreRightChoice.inserisciStudente(studentetest1);
+        assertFalse(gestoreRightChoice.verificaUsernameStudente(studente));
+        assertFalse(gestoreRightChoice.verificaUsernameStudente(studentetest));
+        assertTrue(gestoreRightChoice.verificaUsernameStudente(studentetest1));
     }
 }
