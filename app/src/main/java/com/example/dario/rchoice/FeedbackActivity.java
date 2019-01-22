@@ -11,13 +11,14 @@ import gestori.GestioneCorso;
 
 import java.util.ArrayList;
 
+import interfacce.InterfacciaRightChoice;
 import utility.CustomAdapterFeedback;
 
 
 
 public class FeedbackActivity extends AppCompatActivity {
   private ListView listView;
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

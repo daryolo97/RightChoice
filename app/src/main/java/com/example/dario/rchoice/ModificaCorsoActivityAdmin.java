@@ -10,10 +10,11 @@ import android.widget.Toast;
 
 import entity.Corso;
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 public class ModificaCorsoActivityAdmin extends AppCompatActivity {
 
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private EditText nomeCorso;
   private EditText docenteCorso;
   private EditText descrizioneCorso;

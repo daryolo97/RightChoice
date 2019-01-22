@@ -76,6 +76,8 @@ public class GestioneFeedback  {
             new String[]{feedback.getTitolo(), feedback.getDescrizione()});
   }
 
+
+
   /**
    * Metodo che pone lo 'stato' del feedback da 0 a 1.
    * @param feedback rappresenta il feedback da settare

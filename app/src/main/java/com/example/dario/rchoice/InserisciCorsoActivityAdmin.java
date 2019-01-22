@@ -10,6 +10,7 @@ import android.widget.Toast;
 import entity.Corso;
 
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 public class InserisciCorsoActivityAdmin extends AppCompatActivity {
   private EditText nome;
@@ -17,7 +18,7 @@ public class InserisciCorsoActivityAdmin extends AppCompatActivity {
   private EditText descrizione;
   private EditText codice;
   private EditText link;
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

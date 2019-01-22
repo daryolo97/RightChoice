@@ -9,11 +9,12 @@ import android.widget.Toast;
 import entity.Corso;
 import entity.Feedback;
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 import java.util.ArrayList;
 
 public class InserisciFeedbackActivity extends AppCompatActivity {
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private ArrayList<Corso> listaCorsi;
   private EditText titoloET;
   private EditText descrizioneET;

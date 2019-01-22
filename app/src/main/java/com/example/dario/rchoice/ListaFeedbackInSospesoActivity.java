@@ -12,11 +12,12 @@ import facade.GestoreRightChoice;
 
 import java.util.ArrayList;
 
+import interfacce.InterfacciaRightChoice;
 import utility.CustomAdapterFeedback;
 
 public class ListaFeedbackInSospesoActivity extends AppCompatActivity {
   private ListView listView;
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

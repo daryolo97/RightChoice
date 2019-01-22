@@ -8,9 +8,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 public class CorsoActivityAdmin extends AppCompatActivity {
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private TextView tvNomeCorso;
   private TextView tvDocente;
   private TextView tvDescrizione;

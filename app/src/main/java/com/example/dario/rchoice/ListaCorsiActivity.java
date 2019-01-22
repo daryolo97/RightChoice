@@ -10,11 +10,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 import java.util.ArrayList;
 
 public class ListaCorsiActivity extends AppCompatActivity {
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

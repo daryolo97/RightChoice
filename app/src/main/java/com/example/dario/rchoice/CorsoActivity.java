@@ -9,11 +9,12 @@ import android.widget.TextView;
 
 import entity.Corso;
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 import java.util.ArrayList;
 
 public class CorsoActivity extends AppCompatActivity {
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private TextView tvNomeCorso;
   private TextView tvDocente;
   private TextView tvDescrizione;

@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import entity.Studente;
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 public class RegistrazioneActivity extends AppCompatActivity {
   private EditText usernameET;
@@ -16,7 +17,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
   private EditText matricolaET;
   private EditText nomeET;
   private EditText cognomeET;
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private String username;
   private String password;
   private String nome;

@@ -10,11 +10,12 @@ import android.widget.Toast;
 import entity.Corso;
 import entity.Feedback;
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 import java.util.ArrayList;
 
 public class FeedbackInSospesoActivity extends AppCompatActivity {
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private TextView nomeCorso;
   private TextView titolo;
   private TextView descrizione;

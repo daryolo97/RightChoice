@@ -8,9 +8,10 @@ import android.view.View;
 import entity.Corso;
 
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 public class HomeActivity extends AppCompatActivity {
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

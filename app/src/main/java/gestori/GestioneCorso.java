@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import database.DatabaseHelper;
 import entity.Corso;
+import entity.Studente;
+import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 import java.util.ArrayList;
 
@@ -142,8 +145,9 @@ public class GestioneCorso  {
     SQLiteDatabase db = dbHelper.getWritableDatabase();
 
     db.delete("corsi",  "codice = ?", new String[]{corso.getCodice()});
+
+
   }
-
-
+  
 
 }

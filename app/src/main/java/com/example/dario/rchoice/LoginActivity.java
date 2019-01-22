@@ -11,11 +11,12 @@ import database.DatabaseHelper;
 import entity.Admin;
 import entity.Studente;
 import facade.GestoreRightChoice;
+import interfacce.InterfacciaRightChoice;
 
 public class LoginActivity extends AppCompatActivity {
   private EditText usernameET;
   private EditText passwordET;
-  private GestoreRightChoice gestoreRightChoice;
+  private InterfacciaRightChoice gestoreRightChoice;
   private DatabaseHelper databaseHelper;
 
   @Override
@@ -57,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
               "Username e Password non validi", Toast.LENGTH_SHORT).show();
     }
   }
+
 
   /**
    * Metodo che permette di lanciare l'activity al tocco della view cui è legata.
