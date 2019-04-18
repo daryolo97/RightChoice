@@ -29,6 +29,9 @@ public class Corso {
   public Corso() {
 
   }
+  public int get(){
+    return 1;
+  }
 
   public String getCodice() {
     return codice;
